@@ -1,0 +1,40 @@
+.login-container {
+  background-color: #232323;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  color: white;
+
+  h1 {
+    font-size: 50px;
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    padding: 12px 32px;
+    background-color: #1db954;
+    border-radius: 24px;
+    font-weight: 600;
+    margin-bottom: 5em;
+  }
+
+  a:hover {
+    opacity: 0.9;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .login-container {
+    h1 {
+      font-size: 36px;
+    }
+
+    a {
+      padding: 10px 24px;
+      font-size: 0.85rem;
+    }
+  }
+}
