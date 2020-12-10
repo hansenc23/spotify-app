@@ -1,0 +1,32 @@
+.main-container {
+  height: 10vh;
+  background-color: #2f2f2f;
+
+  .menu-logo {
+    img {
+      background-color: red;
+      color: white;
+      transform: scaleX(-1);
+      margin: 2.5rem 1.8rem;
+      position: absolute;
+      z-index: 5;
+      top: 0;
+      width: 2rem;
+    }
+  }
+
+  .page {
+    color: white;
+    position: absolute;
+    top: 0;
+    margin: 5rem 1.8rem;
+  }
+}
+
+// .main-container {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: space-between;
+//   height: 10vh;
+//   background-color: #2f2f2f;
+// }

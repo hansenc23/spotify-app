@@ -25,7 +25,6 @@ export const AuthProvider = (props) => {
 
   const logout = () => {
     window.localStorage.removeItem('access_token');
-    window.location.reload();
   };
 
   return (

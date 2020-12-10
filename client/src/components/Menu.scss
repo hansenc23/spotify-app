@@ -1,0 +1,22 @@
+.menu-container {
+  img {
+    color: white;
+    transform: scaleX(-1);
+    // margin: 2.5rem 1.8rem;
+    // z-index: 5;
+    // top: 0;
+    width: 2rem;
+    padding-top: 1rem;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .menu-container {
+    img {
+      color: white;
+      transform: scaleX(-1);
+      width: 2rem;
+      padding-top: 0;
+    }
+  }
+}

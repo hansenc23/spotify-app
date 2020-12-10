@@ -1,0 +1,41 @@
+.track-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.2rem;
+
+  .track-detail {
+    margin-left: 1rem;
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .track-artist {
+      color: rgb(143, 142, 142);
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .track-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1.2rem;
+
+    img {
+      width: 45px;
+    }
+
+    .track-detail {
+      margin-left: 1rem;
+
+      p {
+        font-size: 0.8rem;
+      }
+
+      .track-artist {
+        color: rgb(143, 142, 142);
+      }
+    }
+  }
+}

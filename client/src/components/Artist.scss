@@ -1,0 +1,13 @@
+.artist-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  img {
+    border-radius: 50%;
+    width: 100px;
+    margin-bottom: 0.7rem;
+  }
+}
