@@ -2,9 +2,9 @@ import React from 'react';
 import menu from '../images/menu.svg';
 import './Menu.scss';
 
-const Menu = () => {
+const Menu = ({ toggleProfile }) => {
   return (
-    <div className='menu-container'>
+    <div onClick={toggleProfile} className='menu-container'>
       <img src={menu} alt='' />
     </div>
   );

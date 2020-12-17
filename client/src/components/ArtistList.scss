@@ -1,7 +1,14 @@
 .artistlist-container {
+  margin-top: 1rem;
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;
   justify-content: center;
-  margin: 0 1rem;
+}
+
+@media only screen and (min-width: 674px) {
+  .artistlist-container {
+    margin-top: 1rem;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

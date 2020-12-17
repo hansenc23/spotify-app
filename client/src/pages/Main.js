@@ -4,15 +4,15 @@ import Navbar from '../components/Navbar';
 import './Main.scss';
 import { HiOutlineMenuAlt2 } from 'react-icons/hi';
 import menu from '../images/menu.svg';
+import Profile from '../components/Profile';
+import Menu from '../components/Menu';
 
 const Main = () => {
   return (
     <>
       <div className='main-container'>
         <Navbar />
-        {/* <div className='menu-logo'>
-          <img src={menu} alt='' />
-        </div> */}
+        {/* <Profile /> */}
       </div>
     </>
   );

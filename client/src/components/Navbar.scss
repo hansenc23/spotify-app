@@ -1,7 +1,7 @@
 .nav-container {
   display: flex;
   justify-content: center;
-  height: inherit;
+  height: 10vh;
 
   .links {
     width: 25vw;
@@ -31,6 +31,7 @@
   background-color: #414141;
   padding-top: 4px;
   border-bottom: 4px solid #1db954;
+  transition: all 0.2s ease-in-out;
 }
 
 @media only screen and (max-width: 320px) {
