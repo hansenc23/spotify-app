@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './TopTracks.scss';
 import Track from '../components/Track';
 import TrackList from '../components/TrackList';

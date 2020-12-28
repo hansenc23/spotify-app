@@ -11,3 +11,21 @@
     margin-bottom: 0.7rem;
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .artist-item {
+    margin-bottom: 4rem;
+
+    img {
+      width: 130px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .artist-item {
+    img {
+      width: 150px;
+    }
+  }
+}

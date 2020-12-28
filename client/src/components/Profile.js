@@ -8,6 +8,10 @@ const Profile = ({ profileData, toggleProfile }) => {
   // useEffect(() => {
 
   // }, [toggleProfile]);
+
+  const logout = () => {
+    console.log('logout');
+  };
   return (
     <div className={'profile-container' + (toggleProfile ? ' open' : '')}>
       <div className='profile-content'>
@@ -27,7 +31,9 @@ const Profile = ({ profileData, toggleProfile }) => {
             <p className='value'>15</p>
           </div>
         </div>
-        <button className='logout-btn'>Log Out</button>
+        <button onClick={logout} className='logout-btn'>
+          Log Out
+        </button>
       </div>
     </div>
   );

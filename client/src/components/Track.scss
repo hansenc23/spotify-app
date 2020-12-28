@@ -39,3 +39,34 @@
     }
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .track-item {
+    img {
+      width: 65px;
+    }
+    .track-detail {
+      p {
+        font-size: 1rem;
+      }
+
+      .track-artist {
+        color: rgb(143, 142, 142);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .track-item {
+    img {
+      width: 57px;
+    }
+
+    .track-detail {
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

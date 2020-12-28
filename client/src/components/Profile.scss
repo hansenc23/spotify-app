@@ -60,6 +60,15 @@
       border-radius: 22px;
       border: none;
       padding: 10px 32px;
+      cursor: pointer;
+    }
+
+    button:focus {
+      outline: none;
+    }
+
+    button:hover {
+      opacity: 0.8;
     }
   }
 }
@@ -95,11 +104,21 @@
       button {
         font-size: 0.8rem;
         color: white;
-
         border-radius: 22px;
         border: none;
         padding: 8px 24px;
       }
     }
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .profile-container {
+    visibility: visible;
+    transform: translate3d(0, 0, 0);
+    transition: none;
+    // position: relative;
+    width: 30vw;
+    // display: inline-block;
   }
 }
