@@ -1,17 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './TopTracks.scss';
 import Track from '../components/Track';
 import TrackList from '../components/TrackList';
 import Menu from '../components/Menu';
 import Profile from '../components/Profile';
+import { ToggleContext } from '../context/ToggleContext';
 
 const TopTracks = () => {
-  const [toggle, setToggle] = useState(false);
   const [range, setRange] = useState('alltime');
-
-  const toggleProfile = () => {
-    setToggle(!toggle);
-  };
+  const { toggle, toggleProfile } = useContext(ToggleContext);
 
   const allTimeRange = () => {
     setRange('alltime');
@@ -26,9 +23,9 @@ const TopTracks = () => {
   };
   return (
     <>
-      <div className='profile'>
+      {/* <div className='profile'>
         <Profile toggleProfile={toggle} />
-      </div>
+      </div> */}
       <div className='menu'>
         <Menu toggleProfile={toggleProfile} />
       </div>

@@ -1,10 +1,133 @@
 .playlists-container {
+  padding-top: 3rem;
+  overflow: auto;
+  padding-left: 1.8rem;
+  padding-right: 1.8rem;
   color: white;
   height: 90vh;
   background: linear-gradient(180deg, #000000 0%, #212121 100%);
 
   .heading {
-    padding-top: 6rem;
-    padding-left: 1.8rem;
+    padding-top: 1rem;
+    padding-bottom: 0.3rem;
+  }
+
+  .upper-nav {
+    padding-top: 1rem;
+    padding-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    top: 0;
+  }
+
+  .track-range-container {
+    padding-top: 1rem;
+
+    .track-range {
+      display: flex;
+      justify-content: flex-start;
+      list-style: none;
+
+      li {
+        cursor: pointer;
+        font-size: 0.8rem;
+        margin-right: 1rem;
+      }
+
+      .selected {
+        // padding-top: 2px;
+        border-bottom: 2px solid #1db954;
+      }
+    }
+  }
+
+  .search-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    margin-bottom: 2rem;
+
+    svg {
+      position: absolute;
+      float: right;
+      margin-left: 12px;
+      color: rgb(187, 187, 187);
+    }
+  }
+
+  .search-input {
+    background: rgb(53, 53, 53);
+    border: none;
+    border-radius: 16px;
+    padding: 0.5rem 1rem 0.5rem 2.2rem;
+    color: rgb(218, 218, 218);
+  }
+
+  .search-input:focus {
+    outline: none;
+  }
+}
+
+.menu {
+  padding: 1rem 1.8rem 1rem 1.8rem;
+  background-color: rgba(0, 0, 0, 0.466);
+  position: absolute;
+}
+
+@media only screen and (max-width: 320px) {
+  .top-tracks-container {
+    .heading {
+      padding-top: 1rem;
+    }
+    .upper-nav {
+      display: flex;
+      flex-direction: column;
+      top: 0;
+      background-color: rgb(0, 0, 0);
+    }
+    .heading {
+      padding-top: 0;
+      font-size: 1.5rem;
+    }
+
+    .track-range-container {
+      .track-range {
+        display: flex;
+        justify-content: flex-start;
+        list-style: none;
+
+        li {
+          font-size: 0.7rem;
+          margin-right: 1rem;
+        }
+
+        .selected {
+          border-bottom: 2px solid #1db954;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .playlists-container {
+    padding-top: 5rem;
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+
+  .menu {
+    padding: 1.5rem 4rem 1.5rem 4rem;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .menu {
+    display: none;
+  }
+
+  .playlists-container {
+    width: 70vw;
+    float: right;
   }
 }

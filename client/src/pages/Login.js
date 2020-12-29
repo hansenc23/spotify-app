@@ -28,7 +28,7 @@ const Login = () => {
 
   return (
     <div className='login-container'>
-      <h1>Hey there !</h1>
+      <h1>Hey there!</h1>
       <a href='http://localhost:5000/login'>Login with Spotify</a>
     </div>
   );

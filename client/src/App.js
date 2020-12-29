@@ -5,6 +5,7 @@ import Login from './pages/Login';
 import Main from './pages/Main';
 import { AuthProvider, AuthContext } from './context/AuthContext';
 import { SpotifyProvider } from './context/SpotifyContext';
+import { ToggleProvider } from './context/ToggleContext';
 import TopTracks from './pages/TopTracks';
 import TopArtists from './pages/TopArtists';
 import Recent from './pages/Recent';
@@ -29,8 +30,9 @@ function App() {
         </Switch>
         <Login />
       </Router> */}
-
-      {token ? <Main /> : <Login />}
+      <SpotifyProvider>
+        <ToggleProvider>{token ? <Main /> : <Login />}</ToggleProvider>
+      </SpotifyProvider>
     </div>
   );
 }

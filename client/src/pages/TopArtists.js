@@ -1,17 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import ArtistList from '../components/ArtistList';
 import Menu from '../components/Menu';
 import Profile from '../components/Profile';
 import TrackList from '../components/TrackList';
+import { ToggleContext } from '../context/ToggleContext';
 import './TopArtists.scss';
 
 const TopArtists = () => {
-  const [toggle, setToggle] = useState(false);
+  const { toggle, toggleProfile } = useContext(ToggleContext);
   const [range, setRange] = useState('alltime');
-
-  const toggleProfile = () => {
-    setToggle(!toggle);
-  };
 
   const allTimeRange = () => {
     setRange('alltime');
@@ -26,9 +23,6 @@ const TopArtists = () => {
   };
   return (
     <>
-      <div className='profile'>
-        <Profile toggleProfile={toggle} />
-      </div>
       <div className='menu'>
         <Menu toggleProfile={toggleProfile} />
       </div>

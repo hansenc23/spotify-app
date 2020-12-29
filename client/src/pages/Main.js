@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import Navbar from '../components/Navbar';
@@ -12,8 +12,10 @@ import TopArtists from './TopArtists';
 import Recent from './Recent';
 import Playlists from './Playlists';
 import { authToken } from '../token';
+import { ToggleContext } from '../context/ToggleContext';
 
 const Main = () => {
+  const { toggle } = useContext(ToggleContext);
   // return (
   //   <>
   //     {/* <div className='main-container'><Navbar /></div> */}
@@ -38,6 +40,7 @@ const Main = () => {
         <div className='main-container'>
           <Router>
             <Redirect to='/top-tracks' />
+            <Profile toggleProfile={toggle} />
             <Switch>
               <Route path='/top-tracks' component={TopTracks} />
               <Route path='/top-artists' component={TopArtists} />
