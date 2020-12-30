@@ -26,8 +26,8 @@ export const SpotifyProvider = (props) => {
   };
 
   //Get Current User's playlists
-  const getPlaylists = async () => {
-    const res = await axios.get('https://api.spotify.com/v1/me/playlists', tokenConfig);
+  const getPlaylists = async (limit = 10, offset = 0) => {
+    const res = await axios.get(`https://api.spotify.com/v1/me/playlists?limit=${limit}&offset=${offset}`, tokenConfig);
     return res;
   };
   return <SpotifyContext.Provider value={{ getProfile, getFollowing, getPlaylists }}>{props.children}</SpotifyContext.Provider>;

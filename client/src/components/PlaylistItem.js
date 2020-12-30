@@ -1,11 +1,15 @@
 import React from 'react';
 import artist from '../images/artist.jpg';
 import './PlaylistItem.scss';
-const PlaylistItem = () => {
+import { Link } from 'react-router-dom';
+const PlaylistItem = ({ playlistName, thumbnail, trackCount, link }) => {
   return (
     <div className='playlist-item'>
-      <img src={artist} alt='' />
-      <p>BLACKPINK</p>
+      <a className='playlist-link' target='_blank' href={link}>
+        <img src={thumbnail} alt='' />
+        <p>{playlistName}</p>
+        <p className='track-count'>{`${trackCount} TRACKS`}</p>
+      </a>
     </div>
   );
 };

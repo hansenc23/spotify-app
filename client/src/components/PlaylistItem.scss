@@ -1,14 +1,38 @@
+.playlist-link {
+  text-decoration: none;
+  color: unset;
+}
+
+.playlist-link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .playlist-item {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
+  font-size: 0.9rem;
   // margin-bottom: 2rem;
 
   img {
     width: 140px;
     margin-bottom: 0.7rem;
   }
+
+  .track-count {
+    font-size: 0.7rem;
+    color: rgb(161, 161, 161);
+  }
+}
+
+.playlist-link:hover {
+  transition: all 0.1s ease-in;
+  opacity: 0.6;
 }
 
 @media only screen and (min-width: 500px) {
