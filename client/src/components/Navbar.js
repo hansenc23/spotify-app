@@ -11,32 +11,22 @@ const Navbar = () => {
 
   return (
     <div className='nav-container'>
-      <div className={`links ${location.pathname === '/top-tracks' ? 'active' : ''}`}>
-        {' '}
-        <Link to='/top-tracks'>
-          <img src={music} alt='' />
-          Top Tracks
-        </Link>
-      </div>
-      <div className={`links ${location.pathname === '/top-artists' ? 'active' : ''}`}>
-        {' '}
-        <Link to='/top-artists'>
-          <img src={star} alt='' />
-          Top Artists
-        </Link>
-      </div>
-      <div className={`links ${location.pathname === '/recent' ? 'active' : ''}`}>
-        <Link to='/recent'>
-          <img src={recent} alt='' />
-          Recent
-        </Link>
-      </div>
-      <div className={`links ${location.pathname === '/playlists' ? 'active' : ''}`}>
-        <Link to='/playlists'>
-          <img src={playlist} alt='' />
-          Playlists
-        </Link>
-      </div>
+      <Link to='/top-tracks' className={`links ${location.pathname === '/top-tracks' ? 'active' : ''}`}>
+        <img src={music} alt='' />
+        Top Tracks
+      </Link>
+      <Link to='/top-artists' className={`links ${location.pathname === '/top-artists' ? 'active' : ''}`}>
+        <img src={star} alt='' />
+        Top Artists
+      </Link>
+      <Link to='/recent' className={`links ${location.pathname === '/recent' ? 'active' : ''}`}>
+        <img src={recent} alt='' />
+        Recent
+      </Link>
+      <Link to='/playlists' className={`links ${location.pathname === '/playlists' ? 'active' : ''}`}>
+        <img src={playlist} alt='' />
+        Playlists
+      </Link>
     </div>
   );
 };
