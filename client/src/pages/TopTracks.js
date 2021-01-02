@@ -5,10 +5,21 @@ import TrackList from '../components/TrackList';
 import Menu from '../components/Menu';
 import Profile from '../components/Profile';
 import { ToggleContext } from '../context/ToggleContext';
+import { SpotifyContext } from '../context/SpotifyContext';
 
 const TopTracks = () => {
   const [range, setRange] = useState('alltime');
   const { toggle, toggleProfile } = useContext(ToggleContext);
+  const { getTopTracks } = useContext(SpotifyContext);
+  const [topTracksData, setTopTracksData] = useState();
+
+  useEffect(() => {
+    getTopTracks().then((res) => {
+      if (res.status === 200) {
+        console.log(res);
+      }
+    });
+  }, []);
 
   const allTimeRange = () => {
     setRange('alltime');

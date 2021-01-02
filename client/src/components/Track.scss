@@ -3,11 +3,24 @@
   align-items: center;
   margin-bottom: 1.2rem;
 
+  .track-img {
+    width: 50px;
+  }
+
   .track-detail {
     margin-left: 1rem;
 
     p {
-      font-size: 0.9rem;
+      font-size: 0.6rem;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .track-artist {
@@ -16,53 +29,24 @@
   }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (min-width: 360px) {
   .track-item {
-    display: flex;
-    align-items: center;
-    margin-bottom: 1.2rem;
-
-    img {
-      width: 45px;
+    .track-img {
+      width: 60px;
     }
-
     .track-detail {
-      margin-left: 1rem;
-
       p {
-        font-size: 0.8rem;
-      }
-
-      .track-artist {
-        color: rgb(143, 142, 142);
+        font-size: 0.75rem;
       }
     }
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 674px) {
   .track-item {
-    img {
-      width: 65px;
+    .track-img {
+      width: 70px;
     }
-    .track-detail {
-      p {
-        font-size: 1rem;
-      }
-
-      .track-artist {
-        color: rgb(143, 142, 142);
-      }
-    }
-  }
-}
-
-@media only screen and (min-width: 1200px) {
-  .track-item {
-    img {
-      width: 57px;
-    }
-
     .track-detail {
       p {
         font-size: 0.9rem;
@@ -70,3 +54,71 @@
     }
   }
 }
+
+@media only screen and (min-width: 1024px) {
+  .track-item {
+    .track-img {
+      width: 70px;
+    }
+    .track-detail {
+      p {
+        font-size: 0.9rem;
+      }
+    }
+  }
+}
+
+// @media only screen and (max-width: 320px) {
+//   .track-item {
+//     display: flex;
+//     align-items: center;
+//     margin-bottom: 1.2rem;
+
+//     img {
+//       width: 45px;
+//     }
+
+//     .track-detail {
+//       margin-left: 1rem;
+
+//       p {
+//         font-size: 0.8rem;
+//       }
+
+//       .track-artist {
+//         color: rgb(143, 142, 142);
+//       }
+//     }
+//   }
+// }
+
+// @media only screen and (min-width: 1024px) {
+//   .track-item {
+//     img {
+//       width: 65px;
+//     }
+//     .track-detail {
+//       p {
+//         font-size: 1rem;
+//       }
+
+//       .track-artist {
+//         color: rgb(143, 142, 142);
+//       }
+//     }
+//   }
+// }
+
+// @media only screen and (min-width: 1200px) {
+//   .track-item {
+//     img {
+//       width: 60px;
+//     }
+
+//     .track-detail {
+//       p {
+//         font-size: 0.9rem;
+//       }
+//     }
+//   }
+// }
