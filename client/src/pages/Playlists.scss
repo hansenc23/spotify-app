@@ -12,7 +12,6 @@
   .heading {
     padding-top: 1rem;
     padding-bottom: 0.3rem;
-    font-size: 1.5rem;
   }
 
   .upper-nav {
@@ -85,10 +84,11 @@
 }
 
 @media only screen and (max-width: 320px) {
-  .top-tracks-container {
+  .playlists-container {
     .heading {
       padding-top: 1rem;
     }
+
     .upper-nav {
       display: flex;
       flex-direction: column;
@@ -124,6 +124,11 @@
     padding-top: 5rem;
     padding-left: 4rem;
     padding-right: 4rem;
+
+    .heading {
+      padding-top: 0;
+      font-size: 2rem;
+    }
   }
 
   .menu {

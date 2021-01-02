@@ -5,6 +5,7 @@ import Profile from '../components/Profile';
 import TrackList from '../components/TrackList';
 import { ToggleContext } from '../context/ToggleContext';
 import { SpotifyContext } from '../context/SpotifyContext';
+import Spinner from '../components/Spinner';
 import './TopArtists.scss';
 
 const TopArtists = () => {
@@ -12,12 +13,15 @@ const TopArtists = () => {
   const [topArtistsData, setTopArtistsData] = useState();
   const { getTopArtists } = useContext(SpotifyContext);
   const [range, setRange] = useState('long_term');
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     getTopArtists(range).then((res) => {
       if (res.status === 200) {
         console.log(res);
         setTopArtistsData(res.data.items);
+        setLoading(false);
       }
     });
   }, [range]);
@@ -40,7 +44,11 @@ const TopArtists = () => {
       </div>
       <div className='top-artists-container'>
         <div className='upper-nav'>
-          <h1 className='heading'>Top Artists</h1>
+          <h1 className='heading'>
+            Top Artists
+            {loading ? <span>&nbsp; {loading ? <Spinner size='20px' /> : ''}</span> : ''}
+          </h1>
+
           <div className='track-range-container'>
             <ul className='track-range'>
               <li onClick={allTimeRange} className={range === 'long_term' ? 'selected' : ''}>
@@ -52,6 +60,7 @@ const TopArtists = () => {
               <li onClick={oneMonthRange} className={range === 'short_term' ? 'selected' : ''}>
                 Last Month
               </li>
+              <li></li>
             </ul>
           </div>
         </div>

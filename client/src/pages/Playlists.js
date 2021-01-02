@@ -12,13 +12,14 @@ const Playlists = () => {
   const { toggle, toggleProfile } = useContext(ToggleContext);
   const { getPlaylists } = useContext(SpotifyContext);
   const [playlistData, setPlaylistData] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(false);
   const [searchInput, setSearchInput] = useState('');
   const [limit, setLimit] = useState(10);
   const [offset, setOffset] = useState(0);
   const [isEmpty, setIsEmpty] = useState(false);
 
   useEffect(() => {
+    setLoading(true);
     fetchPlaylist(limit, offset);
   }, [limit, offset]);
 
@@ -30,7 +31,7 @@ const Playlists = () => {
         if (res.data.items < limit) {
           setIsEmpty(true);
         }
-        // setLoading(true);
+        setLoading(false);
       }
     });
   };
@@ -59,7 +60,7 @@ const Playlists = () => {
       </div>
       <div className='playlists-container' onScroll={handleScroll}>
         <div className='upper-nav'>
-          <h1 className='heading'>Your Playlists</h1>
+          <h1 className='heading'>Your Playlists {loading ? <span>&nbsp; {loading ? <Spinner size='20px' /> : ''}</span> : ''}</h1>
         </div>
         <div className='search-container'>
           <BiSearch />
