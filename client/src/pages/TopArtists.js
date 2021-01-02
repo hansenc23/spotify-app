@@ -1,25 +1,37 @@
-import React, { useState, useContext } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ArtistList from '../components/ArtistList';
 import Menu from '../components/Menu';
 import Profile from '../components/Profile';
 import TrackList from '../components/TrackList';
 import { ToggleContext } from '../context/ToggleContext';
+import { SpotifyContext } from '../context/SpotifyContext';
 import './TopArtists.scss';
 
 const TopArtists = () => {
   const { toggle, toggleProfile } = useContext(ToggleContext);
-  const [range, setRange] = useState('alltime');
+  const [topArtistsData, setTopArtistsData] = useState();
+  const { getTopArtists } = useContext(SpotifyContext);
+  const [range, setRange] = useState('long_term');
+
+  useEffect(() => {
+    getTopArtists(range).then((res) => {
+      if (res.status === 200) {
+        console.log(res);
+        setTopArtistsData(res.data.items);
+      }
+    });
+  }, [range]);
 
   const allTimeRange = () => {
-    setRange('alltime');
+    setRange('long_term');
   };
 
   const sixMonthsRange = () => {
-    setRange('sixmonths');
+    setRange('medium_term');
   };
 
   const oneMonthRange = () => {
-    setRange('onemonth');
+    setRange('short_term');
   };
   return (
     <>
@@ -31,19 +43,19 @@ const TopArtists = () => {
           <h1 className='heading'>Top Artists</h1>
           <div className='track-range-container'>
             <ul className='track-range'>
-              <li onClick={allTimeRange} className={range === 'alltime' ? 'selected' : ''}>
+              <li onClick={allTimeRange} className={range === 'long_term' ? 'selected' : ''}>
                 All time
               </li>
-              <li onClick={sixMonthsRange} className={range === 'sixmonths' ? 'selected' : ''}>
+              <li onClick={sixMonthsRange} className={range === 'medium_term' ? 'selected' : ''}>
                 Last 6 Months
               </li>
-              <li onClick={oneMonthRange} className={range === 'onemonth' ? 'selected' : ''}>
+              <li onClick={oneMonthRange} className={range === 'short_term' ? 'selected' : ''}>
                 Last Month
               </li>
             </ul>
           </div>
         </div>
-        <ArtistList />
+        <ArtistList topArtistsData={topArtistsData} />
       </div>
     </>
   );

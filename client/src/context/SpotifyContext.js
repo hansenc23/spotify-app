@@ -39,12 +39,21 @@ export const SpotifyProvider = (props) => {
   };
 
   //Get User's Top Tracks
-  const getTopTracks = async () => {
-    const res = await axios.get('https://api.spotify.com/v1/me/top/tracks', tokenConfig);
+  const getTopTracks = async (range) => {
+    const res = await axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=${range}`, tokenConfig);
+
+    return res;
+  };
+
+  //Get User's Top Artists
+  const getTopArtists = async (range) => {
+    const res = await axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=${range}`, tokenConfig);
 
     return res;
   };
   return (
-    <SpotifyContext.Provider value={{ getProfile, getFollowing, getPlaylists, getRecent, getTopTracks }}>{props.children}</SpotifyContext.Provider>
+    <SpotifyContext.Provider value={{ getProfile, getFollowing, getPlaylists, getRecent, getTopTracks, getTopArtists }}>
+      {props.children}
+    </SpotifyContext.Provider>
   );
 };

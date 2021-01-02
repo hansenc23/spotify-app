@@ -5,19 +5,50 @@
   align-items: center;
   margin-bottom: 2rem;
 
+  .artist-link {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  .artist-link:hover {
+    text-decoration: underline;
+  }
+
+  p {
+    font-size: 0.85rem;
+  }
+
   img {
     border-radius: 50%;
-    width: 100px;
+    width: 140px;
     margin-bottom: 0.7rem;
+  }
+
+  img:hover {
+    opacity: 0.8;
   }
 }
 
-@media only screen and (min-width: 1024px) {
+@media only screen and (min-width: 360px) {
   .artist-item {
-    margin-bottom: 4rem;
-
     img {
-      width: 130px;
+      width: 140px;
+    }
+  }
+}
+
+@media only screen and (min-width: 500px) {
+  .artist-item {
+    img {
+      width: 170px;
+    }
+  }
+}
+
+@media only screen and (min-width: 880px) {
+  .artist-item {
+    img {
+      width: 190px;
     }
   }
 }
@@ -25,7 +56,26 @@
 @media only screen and (min-width: 1200px) {
   .artist-item {
     img {
-      width: 150px;
+      width: 190px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1380px) {
+  .artist-item {
+    img {
+      width: 210px;
+    }
+  }
+}
+
+@media only screen and (min-width: 1900px) {
+  .artist-item {
+    p {
+      font-size: 1rem;
+    }
+    img {
+      width: 220px;
     }
   }
 }

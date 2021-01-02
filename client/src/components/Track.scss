@@ -14,6 +14,10 @@
       font-size: 0.6rem;
     }
 
+    p.track-artist {
+      font-size: 0.55rem;
+    }
+
     a {
       color: inherit;
       text-decoration: none;
@@ -38,6 +42,10 @@
       p {
         font-size: 0.75rem;
       }
+
+      p.track-artist {
+        font-size: 0.7rem;
+      }
     }
   }
 }
@@ -51,6 +59,10 @@
       p {
         font-size: 0.9rem;
       }
+
+      p.track-artist {
+        font-size: 0.85rem;
+      }
     }
   }
 }
@@ -63,6 +75,10 @@
     .track-detail {
       p {
         font-size: 0.9rem;
+      }
+
+      p.track-artist {
+        font-size: 0.8rem;
       }
     }
   }

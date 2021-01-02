@@ -1,12 +1,14 @@
 import React from 'react';
-import artist from '../images/artist.jpg';
+import artists from '../images/artist.jpg';
 import './Artist.scss';
 
-const Artist = () => {
+const Artist = ({ artist }) => {
   return (
     <div className='artist-item'>
-      <img src={artist} alt='' />
-      <p>BLACKPINK</p>
+      <img src={artist.images[0].url} alt='' />
+      <a className='artist-link' href={artist.external_urls.spotify} target='_blank'>
+        <p>{artist.name}</p>
+      </a>
     </div>
   );
 };

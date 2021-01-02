@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     setToken(authToken);
-  }, []);
+  }, [token]);
 
   return (
     <div className='App'>
