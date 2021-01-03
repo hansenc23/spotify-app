@@ -49,10 +49,6 @@ app
   .use(cors())
   .use(cookieParser());
 
-app.get('*', function (req, res) {
-  res.sendFile(path.resolve(__dirname, './client/build/index.html'));
-});
-
 app.get('/login', function (req, res) {
   var state = generateRandomString(16);
   res.cookie(stateKey, state);
@@ -159,6 +155,10 @@ app.get('/refresh_token', function (req, res) {
       });
     }
   });
+});
+
+app.get('*', function (req, res) {
+  res.sendFile(path.resolve(__dirname, './client/build/index.html'));
 });
 
 console.log(`Listening on ${PORT}`);
