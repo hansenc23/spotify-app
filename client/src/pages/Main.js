@@ -47,8 +47,8 @@ const Main = () => {
               <Route path='/recent' component={Recent} />
               <Route path='/playlists' component={Playlists} />
             </Switch>
+            <Navbar />
           </Router>
-          <Navbar />
         </div>
       </div>
     </>
