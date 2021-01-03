@@ -18,7 +18,7 @@ const PORT = process.env.PORT || 5000;
 const client_id = process.env.CLIENT_ID; // Your client id
 const client_secret = process.env.CLIENT_SECRET; // Your secret
 const redirect_uri = process.env.REDIRECT_URI || 'http://localhost:5000/callback'; // Your redirect uri
-const FRONTEND_URI = process.env.FRONTEND_URI || 'http://localhost:5000/#';
+let FRONTEND_URI = process.env.FRONTEND_URI || 'http://localhost:5000/#';
 
 /**
  * Generates a random string containing numbers and letters
@@ -40,6 +40,9 @@ var stateKey = 'spotify_auth_state';
 var app = express();
 
 //app.use(express.static(path.resolve(__dirname, './public')));
+if (process.env.NODE_ENV !== 'production') {
+  FRONTEND_URI = 'http://localhost:3000/#';
+}
 
 app
   .use(express.static(path.resolve(__dirname, './client/build')))
