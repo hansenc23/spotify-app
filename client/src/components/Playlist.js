@@ -5,7 +5,6 @@ import Spinner from '../components/Spinner';
 import './Playlist.scss';
 
 const Playlist = ({ playlistData }) => {
-  const check = () => {};
   return (
     <div className='playlist-container'>
       {playlistData &&

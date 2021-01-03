@@ -45,6 +45,12 @@ const Playlists = () => {
     if (Math.round(scrollHeight - scrollTop) === clientHeight || Math.round(scrollHeight - scrollTop) === clientHeight + 1) {
       setOffset(limit + offset);
     }
+
+    console.log(scrollTop);
+  };
+
+  const scroll = (e) => {
+    console.log(e.target);
   };
 
   let filteredPlaylist =
@@ -58,7 +64,7 @@ const Playlists = () => {
       <div className='menu'>
         <Menu toggleProfile={toggleProfile} />
       </div>
-      <div className='playlists-container' onScroll={handleScroll}>
+      <div className='playlists-container' onScroll={scroll}>
         <div className='upper-nav'>
           <h1 className='heading'>Your Playlists {loading ? <span>&nbsp; {loading ? <Spinner size='20px' /> : ''}</span> : ''}</h1>
         </div>
