@@ -6,27 +6,45 @@ import playlist from '../images/playlist.svg';
 import star from '../images/star.svg';
 import recent from '../images/past.svg';
 const Navbar = () => {
-  const location = useLocation();
-  console.log(location.pathname);
+  // const location = useLocation();
+  // console.log(location.pathname);
 
   return (
+    // <div className='nav-container'>
+    //   <Link to='/top-tracks' className={`links ${location.pathname === '/top-tracks' ? 'active' : ''}`}>
+    //     <img src={music} alt='' />
+    //     Top Tracks
+    //   </Link>
+    //   <Link to='/top-artists' className={`links ${location.pathname === '/top-artists' ? 'active' : ''}`}>
+    //     <img src={star} alt='' />
+    //     Top Artists
+    //   </Link>
+    //   <Link to='/recent' className={`links ${location.pathname === '/recent' ? 'active' : ''}`}>
+    //     <img src={recent} alt='' />
+    //     Recent
+    //   </Link>
+    //   <Link to='/playlists' className={`links ${location.pathname === '/playlists' ? 'active' : ''}`}>
+    //     <img src={playlist} alt='' />
+    //     Playlists
+    //   </Link>
+    // </div>
     <div className='nav-container'>
-      <Link to='/top-tracks' className={`links ${location.pathname === '/top-tracks' ? 'active' : ''}`}>
+      <a to='/top-tracks' className={`links`}>
         <img src={music} alt='' />
         Top Tracks
-      </Link>
-      <Link to='/top-artists' className={`links ${location.pathname === '/top-artists' ? 'active' : ''}`}>
+      </a>
+      <a to='/top-artists' className={`links`}>
         <img src={star} alt='' />
         Top Artists
-      </Link>
-      <Link to='/recent' className={`links ${location.pathname === '/recent' ? 'active' : ''}`}>
+      </a>
+      <a to='/recent' className={`links`}>
         <img src={recent} alt='' />
         Recent
-      </Link>
-      <Link to='/playlists' className={`links ${location.pathname === '/playlists' ? 'active' : ''}`}>
+      </a>
+      <a to='/playlists' className={`links `}>
         <img src={playlist} alt='' />
         Playlists
-      </Link>
+      </a>
     </div>
   );
 };

@@ -38,7 +38,7 @@ const Main = () => {
     <>
       <div className='max'>
         <div className='main-container'>
-          <Router>
+          <Router primary={false}>
             <Redirect to='/top-tracks' />
             <Profile toggleProfile={toggle} />
             <Switch>
@@ -47,8 +47,8 @@ const Main = () => {
               <Route path='/recent' component={Recent} />
               <Route path='/playlists' component={Playlists} />
             </Switch>
-            <Navbar />
           </Router>
+          <Navbar />
         </div>
       </div>
     </>
