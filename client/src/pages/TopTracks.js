@@ -48,9 +48,9 @@ const TopTracks = () => {
       {/* <div className='profile'>
         <Profile toggleProfile={toggle} />
       </div> */}
-      <div className='menu'>
+      {/* <div className='menu'>
         <Menu toggleProfile={toggleProfile} />
-      </div>
+      </div> */}
       <div className='top-tracks-container'>
         <div className='upper-nav'>
           <h1 className='heading'>Top Tracks{loading ? <span>&nbsp; {loading ? <Spinner size='20px' /> : ''}</span> : ''}</h1>
