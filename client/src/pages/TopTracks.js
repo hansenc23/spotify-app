@@ -7,6 +7,7 @@ import Profile from '../components/Profile';
 import { ToggleContext } from '../context/ToggleContext';
 import { SpotifyContext } from '../context/SpotifyContext';
 import Spinner from '../components/Spinner';
+import Navbar from '../components/Navbar';
 
 const TopTracks = () => {
   const [range, setRange] = useState('long_term');
@@ -70,6 +71,7 @@ const TopTracks = () => {
         </div>
         <TrackList topTracksData={topTracksData} />
       </div>
+      {/* <Navbar /> */}
     </>
   );
 };

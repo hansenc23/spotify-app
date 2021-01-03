@@ -40,14 +40,14 @@ const Main = () => {
         <div className='main-container'>
           <Router primary={false}>
             <Redirect to='/top-tracks' />
-            <Profile toggleProfile={toggle} />
             <Switch>
               <Route path='/top-tracks' component={TopTracks} />
               <Route path='/top-artists' component={TopArtists} />
               <Route path='/recent' component={Recent} />
               <Route path='/playlists' component={Playlists} />
+              <Profile toggleProfile={toggle} />
             </Switch>
-            <Navbar />
+            {/* <Navbar /> */}
           </Router>
         </div>
       </div>
