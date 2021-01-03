@@ -1,10 +1,10 @@
 .top-artists-container {
   padding-top: 3rem;
-  overflow: auto;
+
   padding-left: 1.8rem;
   padding-right: 1.8rem;
   color: white;
-  height: 90vh;
+
   background: linear-gradient(180deg, #000000 0%, #212121 100%);
 
   .heading {
@@ -46,7 +46,8 @@
 .menu {
   padding: 1rem 1.8rem 1rem 1.8rem;
   background-color: rgba(0, 0, 0, 0.466);
-  position: absolute;
+  position: fixed;
+  z-index: 2;
 }
 
 @media only screen and (max-width: 320px) {
