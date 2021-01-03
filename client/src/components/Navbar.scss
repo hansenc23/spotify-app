@@ -1,8 +1,9 @@
 .nav-container {
   display: flex;
   justify-content: center;
-  // height: 10vh;
-
+  height: 10vh;
+  // position: absolute;
+  // z-index: 99;
   .links {
     width: 25vw;
     // height: inherit;
