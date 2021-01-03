@@ -14,10 +14,11 @@ const path = require('path');
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
 
-var client_id = process.env.CLIENT_ID; // Your client id
-var client_secret = process.env.CLIENT_SECRET; // Your secret
-var redirect_uri = 'http://localhost:5000/callback'; // Your redirect uri
-const FRONTEND_URI = 'http://localhost:3000/#';
+const PORT = process.env.PORT || 5000;
+const client_id = process.env.CLIENT_ID; // Your client id
+const client_secret = process.env.CLIENT_SECRET; // Your secret
+const redirect_uri = process.env.REDIRECT_URI || 'http://localhost:5000/callback'; // Your redirect uri
+const FRONTEND_URI = process.env.FRONTEND_URI || 'http://localhost:5000/#';
 
 /**
  * Generates a random string containing numbers and letters
@@ -38,15 +39,15 @@ var stateKey = 'spotify_auth_state';
 
 var app = express();
 
-app.use(express.static(path.resolve(__dirname, './public')));
+//app.use(express.static(path.resolve(__dirname, './public')));
 
 app
-  .use(express.static(path.resolve(__dirname, '../client/build')))
+  .use(express.static(path.resolve(__dirname, './client/build')))
   .use(cors())
   .use(cookieParser());
 
 app.get('/', function (req, res) {
-  res.render(path.resolve(__dirname, '../client/build/index.html'));
+  res.sendFile(path.resolve(__dirname, './client/build/index.html'));
 });
 
 app.get('/login', function (req, res) {
@@ -157,5 +158,5 @@ app.get('/refresh_token', function (req, res) {
   });
 });
 
-console.log('Listening on 5000');
-app.listen(5000);
+console.log(`Listening on ${PORT}`);
+app.listen(PORT);
