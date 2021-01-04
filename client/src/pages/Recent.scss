@@ -1,10 +1,10 @@
 .recent-container {
   padding-top: 3rem;
-
+  overflow: auto;
   padding-left: 1.8rem;
   padding-right: 1.8rem;
   color: white;
-
+  padding-bottom: 5rem;
   background: linear-gradient(180deg, #000000 0%, #212121 100%);
 
   .heading {
@@ -102,5 +102,7 @@
   .recent-container {
     width: 70vw;
     float: right;
+    height: 90vh;
+    padding-bottom: 0;
   }
 }

@@ -13,5 +13,11 @@ html {
 
 body {
   height: 100vh;
-  background: rgb(36, 36, 36);
+  background: rgb(0, 0, 0);
+}
+
+@media only screen and (max-width: 1024px) {
+  body {
+    background: rgb(31, 31, 31);
+  }
 }

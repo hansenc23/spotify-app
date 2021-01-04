@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from 'react';
+import React, { useState, useContext, useEffect, useRef } from 'react';
 import ArtistList from '../components/ArtistList';
 import Menu from '../components/Menu';
 import './Playlists.scss';
@@ -14,9 +14,11 @@ const Playlists = () => {
   const [playlistData, setPlaylistData] = useState([]);
   const [loading, setLoading] = useState(false);
   const [searchInput, setSearchInput] = useState('');
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(20);
   const [offset, setOffset] = useState(0);
   const [isEmpty, setIsEmpty] = useState(false);
+
+  const play = useRef(null);
 
   useEffect(() => {
     setLoading(true);
@@ -49,14 +51,10 @@ const Playlists = () => {
     console.log(scrollTop);
   };
 
-  const scroll = (e) => {
-    console.log(e.target);
-  };
-
   let filteredPlaylist =
     playlistData &&
     playlistData.filter((playlist) => {
-      return playlist.name.toLowerCase().indexOf(searchInput) !== -1;
+      return playlist.name.toLowerCase().indexOf(searchInput) !== -1 || playlist.name.indexOf(searchInput) !== -1;
     });
 
   return (
@@ -64,7 +62,7 @@ const Playlists = () => {
       <div className='menu'>
         <Menu toggleProfile={toggleProfile} />
       </div>
-      <div className='playlists-container' onScroll={scroll}>
+      <div ref={play} className='playlists-container' onScroll={handleScroll}>
         <div className='upper-nav'>
           <h1 className='heading'>Your Playlists {loading ? <span>&nbsp; {loading ? <Spinner size='20px' /> : ''}</span> : ''}</h1>
         </div>
