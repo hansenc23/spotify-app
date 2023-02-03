@@ -1,2 +1,2 @@
 # Spotify App
-https://spotify-appp.herokuapp.com/
+https://spotify-look.herokuapp.com/
